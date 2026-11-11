@@ -28,7 +28,7 @@
   "programas": [
     {
       "id": "fnd-remoto-central",
-      "nome": "FND Remoto Central",
+      "nome": "FND Remoto",
       "resumo": "Central para acompanhar e manter computadores Windows da rede.",
       "descricao": "O FND Remoto Central reúne em um painel os computadores Windows que você atende. A central fica instalada em um PC da rede local e mostra a situação de cada máquina, para a manutenção ser feita sem precisar ir até cada mesa.",
       "recursos": [
