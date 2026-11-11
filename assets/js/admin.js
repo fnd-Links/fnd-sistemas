@@ -418,7 +418,7 @@ function adicionarPrograma() {
   let id = slug(nome); const usados = new Set(estado.dados.programas.map((p) => p.id));
   if (!id) id = "programa";
   let n = 2; const base = id; while (usados.has(id)) id = `${base}-${n++}`;
-  estado.dados.programas.push({ id, nome: nome.trim(), resumo: "", descricao: "", recursos: [], requisitos: ["Windows 10 ou 11"], cor: "#1F4FE0", visivel: true, versoes: [], _novo: true });
+  estado.dados.programas.push({ id, nome: nome.trim(), resumo: "", descricao: "", recursos: [], requisitos: ["Windows 10 ou 11"], cor: "#0182FC", visivel: true, versoes: [], _novo: true });
   marcarSujo(); selecionar(estado.dados.programas.length - 1);
 }
 

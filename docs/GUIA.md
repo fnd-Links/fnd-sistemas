@@ -64,3 +64,23 @@ A página do programa passa a existir automaticamente em
 
 `data/programas.json` pode ser editado direto no GitHub. Depois de editar,
 rode `node tests/validar.mjs` para conferir.
+
+## 8. Onde fica cada texto do site
+
+| O que você quer mudar | Onde mexer |
+| --- | --- |
+| Nome, resumo, descrição, recursos, requisitos e cor de um programa | Painel administrativo (ou `data/programas.json`) |
+| Versões, novidades e links de download | Painel administrativo (ou `data/programas.json`) |
+| Frase da página inicial e contatos de suporte | Painel administrativo, item "Portal e contatos" |
+| Textos fixos: "Como baixar e instalar", parágrafo do Suporte, rodapé | `index.html` |
+| Logomarca | `assets/img/` (`logo-512.webp`, `logo-96.png`, `icone-180.png`) |
+| Cores do site | começo de `assets/css/site.css` |
+
+Para editar um arquivo direto no GitHub: abra o arquivo no repositório, clique
+no lápis (Edit this file), altere o texto e clique em **Commit changes**. O
+portal se atualiza em cerca de um minuto.
+
+No `data/programas.json`, altere só o que está entre aspas e mantenha as
+aspas e as vírgulas no lugar. No `index.html`, altere só o texto que aparece
+entre as marcações, por exemplo em `<h3>Escolha o programa</h3>` mude apenas
+`Escolha o programa`.

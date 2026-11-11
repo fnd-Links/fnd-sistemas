@@ -21,7 +21,7 @@
         "Manutenção em segundo plano, sem atrapalhar quem usa o computador"
       ],
       "requisitos": ["Windows 10 ou 11"],
-      "cor": "#1F4FE0",
+      "cor": "#0182FC",
       "visivel": true,
       "versoes": []
     },

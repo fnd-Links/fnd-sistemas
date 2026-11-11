@@ -38,7 +38,7 @@ export function urlSegura(valor) {
   }
 }
 
-export function corSegura(valor, padrao = "#1F4FE0") {
+export function corSegura(valor, padrao = "#0182FC") {
   return /^#[0-9a-fA-F]{6}$/.test(String(valor || "")) ? valor : padrao;
 }
 
