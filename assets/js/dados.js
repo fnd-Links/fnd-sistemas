@@ -135,3 +135,17 @@ export function validarCatalogo(dados, prefixoDownload) {
   return erros;
 }
 
+
+/** Aplica os textos fixos do portal (rodapé, suporte, passos) quando existem no catálogo. */
+export function aplicarTextosDoPortal(dados) {
+  const portal = dados.portal || {};
+  const por = (id, texto) => { const no = document.getElementById(id); if (no && texto) no.textContent = texto; };
+  por("frase", portal.frase);
+  por("texto-suporte", portal.suporte);
+  por("texto-rodape", portal.rodape);
+  const lista = document.getElementById("passos");
+  const passos = (portal.passos || []).filter((p) => p && (p.titulo || p.texto));
+  if (lista && passos.length) {
+    lista.replaceChildren(...passos.map((p) => el("li", {}, el("h3", { text: p.titulo || "" }), el("p", { text: p.texto || "" }))));
+  }
+}

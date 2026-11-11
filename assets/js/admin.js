@@ -154,6 +154,8 @@ async function carregarDoGitHub() {
   const dados = JSON.parse(deBase64(arquivo.content));
   dados.portal = dados.portal || {};
   dados.portal.contato = dados.portal.contato || {};
+  dados.portal.passos = Array.isArray(dados.portal.passos) ? dados.portal.passos : [];
+  while (dados.portal.passos.length < 3) dados.portal.passos.push({ titulo: "", texto: "" });
   dados.programas = Array.isArray(dados.programas) ? dados.programas : [];
   for (const p of dados.programas) {
     p.recursos = p.recursos || []; p.requisitos = p.requisitos || []; p.versoes = p.versoes || [];
@@ -289,7 +291,7 @@ function atualizarBarra() {
 function renderizarMenu() {
   const menu = document.getElementById("menu");
   const itens = [
-    el("li", {}, el("button", { type: "button", "aria-current": String(estado.selecionado === "portal"), onclick: () => selecionar("portal") }, "Portal e contatos")),
+    el("li", {}, el("button", { type: "button", "aria-current": String(estado.selecionado === "portal"), onclick: () => selecionar("portal") }, "Textos do site e contatos")),
     ...estado.dados.programas.map((p, i) => {
       const atual = versaoAtual(p);
       const botao = el("button", { type: "button", "aria-current": String(estado.selecionado === i), style: `--cor-programa:${corSegura(p.cor)}`, onclick: () => selecionar(i) },
@@ -307,8 +309,16 @@ function editorPortal() {
   const portal = estado.dados.portal; const c = portal.contato;
   return [
     el("section", { class: "bloco" },
-      el("h2", { text: "Portal" }),
-      campo("Frase da página inicial", entradaTexto(portal, "frase"))),
+      el("h2", { text: "Textos da página inicial" }),
+      campo("Frase de abertura", entradaTexto(portal, "frase")),
+      campo("Texto do Suporte", entradaTexto(portal, "suporte")),
+      campo("Texto do rodapé", entradaTexto(portal, "rodape"), "Aparece no fim de todas as páginas.")),
+    el("section", { class: "bloco" },
+      el("h2", { text: "Como baixar e instalar" }),
+      portal.passos.map((passo, i) =>
+        el("div", { class: "linha-campos" },
+          campo(`Passo ${i + 1}: título`, entradaTexto(passo, "titulo")),
+          campo(`Passo ${i + 1}: explicação`, entradaTexto(passo, "texto"))))),
     el("section", { class: "bloco" },
       el("h2", { text: "Contatos de suporte" }),
       el("p", { class: "vazio", text: "Campo vazio não aparece no portal." }),

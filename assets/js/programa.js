@@ -1,6 +1,6 @@
 import {
   carregarDados, el, corSegura, urlSegura, versaoAtual, nomeSemMarca,
-  formatarData, formatarTamanho, montarRodape,
+  formatarData, formatarTamanho, montarRodape, aplicarTextosDoPortal,
 } from "./dados.js";
 
 const principal = document.getElementById("conteudo");
@@ -69,6 +69,7 @@ function historico(programa, atual) {
 try {
   const dados = await carregarDados();
   montarRodape(dados, document.getElementById("rodape-links"));
+  aplicarTextosDoPortal(dados);
   const id = new URLSearchParams(location.search).get("id");
   const programa = (dados.programas || []).find((p) => p.id === id && p.visivel !== false);
 

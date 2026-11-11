@@ -2,6 +2,22 @@
   "portal": {
     "nome": "FND Sistemas",
     "frase": "Programas para Windows feitos para o dia a dia de empresas, portarias e técnicos.",
+    "passos": [
+      {
+        "titulo": "Escolha o programa",
+        "texto": "Abra a página do programa e confira a versão e o que mudou nela."
+      },
+      {
+        "titulo": "Baixe o arquivo ZIP",
+        "texto": "O botão Baixar entrega o arquivo oficial, guardado no GitHub da FND Sistemas."
+      },
+      {
+        "titulo": "Extraia e instale",
+        "texto": "Clique com o botão direito no ZIP, escolha Extrair tudo e abra o instalador que está dentro da pasta."
+      }
+    ],
+    "suporte": "Dúvida na instalação, na licença ou no uso de algum programa? Fale com a FND Sistemas.",
+    "rodape": "FND Sistemas. Baixe os programas somente por este portal.",
     "contato": {
       "instagram": "https://www.instagram.com/fnd.sistemas",
       "youtube": "https://www.youtube.com/@fnd-sistemas",
@@ -20,7 +36,9 @@
         "Funciona na rede local, sem depender de servidor na internet",
         "Manutenção em segundo plano, sem atrapalhar quem usa o computador"
       ],
-      "requisitos": ["Windows 10 ou 11"],
+      "requisitos": [
+        "Windows 10 ou 11"
+      ],
       "cor": "#0182FC",
       "visivel": true,
       "versoes": []
@@ -37,7 +55,9 @@
         "Três níveis de acesso: administrador, supervisor e portaria",
         "Cópia de segurança dos dados"
       ],
-      "requisitos": ["Windows 10 ou 11"],
+      "requisitos": [
+        "Windows 10 ou 11"
+      ],
       "cor": "#12805C",
       "visivel": true,
       "versoes": []
@@ -52,7 +72,9 @@
         "Câmeras: vídeo ao vivo e foto no registro",
         "Cadastro e controle de veículos"
       ],
-      "requisitos": ["Windows 10 ou 11"],
+      "requisitos": [
+        "Windows 10 ou 11"
+      ],
       "cor": "#7A3FD1",
       "visivel": true,
       "versoes": []
@@ -63,7 +85,9 @@
       "resumo": "",
       "descricao": "",
       "recursos": [],
-      "requisitos": ["Windows 10 ou 11"],
+      "requisitos": [
+        "Windows 10 ou 11"
+      ],
       "cor": "#C2410C",
       "visivel": true,
       "versoes": []
@@ -77,7 +101,9 @@
         "Limpeza de arquivos temporários",
         "Ajustes de otimização do Windows"
       ],
-      "requisitos": ["Windows 10 ou 11"],
+      "requisitos": [
+        "Windows 10 ou 11"
+      ],
       "cor": "#0E7490",
       "visivel": true,
       "versoes": []
@@ -96,7 +122,9 @@
         "Relatórios, ocorrências e tarefas",
         "Cópia de segurança dos dados"
       ],
-      "requisitos": ["Windows 10 ou 11"],
+      "requisitos": [
+        "Windows 10 ou 11"
+      ],
       "cor": "#B4257A",
       "visivel": true,
       "versoes": []

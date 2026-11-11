@@ -1,4 +1,4 @@
-import { carregarDados, el, corSegura, versaoAtual, nomeSemMarca, montarRodape } from "./dados.js";
+import { carregarDados, el, corSegura, versaoAtual, nomeSemMarca, montarRodape, aplicarTextosDoPortal } from "./dados.js";
 
 const lista = document.getElementById("lista-programas");
 
@@ -26,7 +26,7 @@ try {
   const dados = await carregarDados();
   const visiveis = (dados.programas || []).filter((p) => p.visivel !== false);
 
-  if (dados.portal && dados.portal.frase) document.getElementById("frase").textContent = dados.portal.frase;
+  aplicarTextosDoPortal(dados);
 
   document.getElementById("indice").replaceChildren(
     ...visiveis.map((p) =>
