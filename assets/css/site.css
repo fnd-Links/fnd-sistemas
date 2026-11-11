@@ -1,0 +1,210 @@
+/* FND Sistemas — estilos do portal e base do painel */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+}
+
+:root {
+  --tinta: #0e1b3d;
+  --tinta-suave: #47557a;
+  --papel: #eef2f8;
+  --branco: #ffffff;
+  --linha: #cfd8e8;
+  --cobalto: #1f4fe0;
+  --cobalto-escuro: #173cb0;
+  --ambar: #f2a413;
+  --ambar-fundo: #fff4d9;
+  --ambar-texto: #7a4d00;
+  --verde: #12805c;
+  --verde-fundo: #dff5ec;
+  --erro: #b42318;
+  --erro-fundo: #fde7e4;
+  --cor-programa: var(--cobalto);
+  --largura: 1120px;
+  --raio: 6px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Archivo", "Segoe UI", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--tinta);
+  background: var(--papel);
+}
+
+h1, h2, h3 { line-height: 1.1; margin: 0; font-stretch: 112%; font-weight: 800; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.25rem); }
+h3 { font-size: 1.2rem; }
+p { margin: 0; max-width: 68ch; }
+a { color: var(--cobalto); text-underline-offset: 0.18em; }
+a:hover { color: var(--cobalto-escuro); }
+
+:focus-visible { outline: 3px solid var(--ambar); outline-offset: 3px; border-radius: 2px; }
+
+.contido { width: min(100% - 2.5rem, var(--largura)); margin-inline: auto; }
+
+.pular {
+  position: absolute; left: 1rem; top: -4rem; z-index: 10;
+  background: var(--branco); color: var(--tinta); padding: 0.6rem 1rem; border-radius: var(--raio);
+}
+.pular:focus { top: 1rem; }
+
+/* ---------- Topo ---------- */
+.topo { background: var(--tinta); color: var(--branco); }
+.topo .contido { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1rem; }
+.marca { color: var(--branco); text-decoration: none; font-weight: 900; font-stretch: 125%; font-size: 1.15rem; letter-spacing: 0.01em; }
+.marca span { font-weight: 400; font-stretch: 100%; margin-left: 0.35em; }
+.marca:hover { color: var(--branco); }
+.topo nav { display: flex; gap: 1.5rem; }
+.topo nav a { color: #c9d4f2; text-decoration: none; font-size: 0.98rem; }
+.topo nav a:hover { color: var(--branco); text-decoration: underline; }
+
+/* ---------- Abertura: a marca vira o índice ---------- */
+.abertura { background: var(--tinta); color: var(--branco); padding-block: clamp(2rem, 6vw, 5rem) clamp(3rem, 7vw, 6rem); }
+.abertura .contido { display: grid; grid-template-columns: auto 1fr; align-items: start; column-gap: clamp(1.25rem, 3.5vw, 3rem); }
+.abertura h1 {
+  font-size: clamp(5.5rem, 21vw, 17rem);
+  font-weight: 900; font-stretch: 125%; line-height: 0.8; letter-spacing: -0.03em;
+  margin-left: -0.04em;
+}
+.indice { list-style: none; margin: 0; padding: 0; align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; }
+.indice a {
+  display: block; color: var(--branco); text-decoration: none;
+  font-size: clamp(1.15rem, 0.6rem + 2.3vw, 2.55rem);
+  font-weight: 300; font-stretch: 100%; line-height: 1.12;
+  padding-block: 0.12em; border-bottom: 1px solid #2a3a66;
+  transition: font-weight 160ms ease, padding-left 160ms ease;
+}
+.indice li:first-child a { border-top: 1px solid #2a3a66; }
+.indice a:hover, .indice a:focus-visible { font-weight: 800; padding-left: 0.35em; color: var(--branco); }
+.abertura .frase { grid-column: 1 / -1; margin-top: clamp(1.75rem, 4vw, 3rem); font-size: clamp(1.1rem, 0.95rem + 0.7vw, 1.45rem); color: #c9d4f2; max-width: 46ch; }
+
+@media (max-width: 640px) {
+  .abertura .contido { grid-template-columns: 1fr; row-gap: 1.5rem; }
+  .abertura h1 { font-size: 34vw; }
+  .indice a { font-size: 1.45rem; padding-block: 0.3em; }
+}
+
+/* ---------- Seções ---------- */
+.secao { padding-block: clamp(2.75rem, 6vw, 5rem); }
+.secao > .contido > h2 { margin-bottom: 1.75rem; }
+.secao.clara { background: var(--branco); }
+
+/* ---------- Lista de programas ---------- */
+.programas { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--tinta); }
+.programa-linha {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr) auto; align-items: center;
+  gap: 0.75rem 2rem; padding: 1.4rem 0 1.4rem 1.1rem; border-bottom: 1px solid var(--linha);
+  border-left: 6px solid var(--cor-programa);
+}
+.programa-linha h3 { font-size: 1.3rem; }
+.programa-linha h3 a { color: var(--tinta); text-decoration: none; }
+.programa-linha h3 a:hover { text-decoration: underline; }
+.programa-linha .resumo { color: var(--tinta-suave); }
+.programa-linha .lado { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
+@media (max-width: 820px) {
+  .programa-linha { grid-template-columns: 1fr; padding-right: 0; }
+  .programa-linha .lado { align-items: flex-start; flex-direction: row; flex-wrap: wrap; align-items: center; }
+}
+
+.estado { display: inline-block; font-size: 0.86rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 99px; white-space: nowrap; }
+.estado.disponivel { background: var(--verde-fundo); color: #0b5a40; }
+.estado.em-breve { background: var(--ambar-fundo); color: var(--ambar-texto); }
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font: inherit; font-weight: 700; font-stretch: 108%; text-decoration: none; cursor: pointer;
+  padding: 0.75rem 1.35rem; border-radius: var(--raio); border: 2px solid var(--cobalto);
+  background: var(--cobalto); color: var(--branco);
+}
+.botao:hover { background: var(--cobalto-escuro); border-color: var(--cobalto-escuro); color: var(--branco); }
+.botao.secundario { background: transparent; color: var(--cobalto); }
+.botao.secundario:hover { background: #e3eafc; color: var(--cobalto-escuro); }
+.botao.pequeno { padding: 0.4rem 0.8rem; font-size: 0.92rem; }
+.botao.perigo { background: transparent; border-color: var(--erro); color: var(--erro); }
+.botao.perigo:hover { background: var(--erro-fundo); }
+.botao[disabled], .botao[aria-disabled="true"] { background: #dfe5f0; border-color: #dfe5f0; color: #5d6988; cursor: not-allowed; }
+.botao.grande { font-size: 1.15rem; padding: 0.95rem 1.7rem; }
+
+/* ---------- Passos ---------- */
+.passos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; counter-reset: passo; }
+.passos li { counter-increment: passo; border-top: 2px solid var(--tinta); padding-top: 1rem; }
+.passos li::before { content: counter(passo); display: block; font-size: 2.6rem; font-weight: 900; font-stretch: 125%; line-height: 1; margin-bottom: 0.6rem; color: var(--cobalto); }
+.passos h3 { margin-bottom: 0.4rem; }
+.passos p { color: var(--tinta-suave); }
+@media (max-width: 760px) { .passos { grid-template-columns: 1fr; } }
+
+.contatos { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+.contatos a {
+  font-weight: 700; text-decoration: none; padding: 0.7rem 1.2rem; border: 2px solid var(--tinta);
+  border-radius: var(--raio); color: var(--tinta);
+}
+.contatos a:hover { background: var(--tinta); color: var(--branco); }
+
+/* ---------- Página de um programa ---------- */
+.capa { background: var(--tinta); color: var(--branco); padding-block: clamp(2rem, 5vw, 4rem); border-bottom: 10px solid var(--cor-programa); }
+.capa .voltar { color: #c9d4f2; font-size: 0.98rem; }
+.capa h1 { margin-top: 1.25rem; font-size: clamp(2.3rem, 1.2rem + 5.5vw, 5.25rem); font-weight: 300; font-stretch: 100%; line-height: 0.98; letter-spacing: -0.02em; }
+.capa h1 b { font-weight: 900; font-stretch: 125%; display: block; }
+.capa .resumo { margin-top: 1.25rem; font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem); color: #c9d4f2; max-width: 44ch; }
+
+.duas-colunas { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+@media (max-width: 860px) { .duas-colunas { grid-template-columns: 1fr; } .duas-colunas .baixar { order: -1; } }
+
+.texto > * + * { margin-top: 1rem; }
+.texto h2 { margin-top: 2.5rem; font-size: 1.5rem; }
+.texto h2:first-child { margin-top: 0; }
+.texto ul { margin: 1rem 0 0; padding-left: 1.2rem; }
+.texto li + li { margin-top: 0.35rem; }
+
+.baixar { background: var(--branco); border: 2px solid var(--tinta); border-radius: var(--raio); padding: 1.5rem; position: sticky; top: 1.25rem; }
+.baixar h2 { font-size: 1.25rem; margin-bottom: 1rem; }
+.baixar dl { margin: 0 0 1.25rem; display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1rem; }
+.baixar dt { color: var(--tinta-suave); }
+.baixar dd { margin: 0; font-weight: 700; overflow-wrap: anywhere; }
+.baixar .botao { width: 100%; }
+.baixar .nota { margin-top: 0.9rem; font-size: 0.93rem; color: var(--tinta-suave); }
+.baixar code { font-size: 0.8rem; overflow-wrap: anywhere; }
+
+.historico { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--tinta); }
+.historico > li { display: grid; grid-template-columns: 11rem 1fr; gap: 0.5rem 2rem; padding-block: 1.25rem; border-bottom: 1px solid var(--linha); }
+.historico .versao { font-weight: 900; font-stretch: 120%; font-size: 1.3rem; }
+.historico .data { color: var(--tinta-suave); font-size: 0.95rem; }
+.historico ul { margin: 0; padding-left: 1.2rem; }
+.historico .baixar-antiga { font-size: 0.93rem; }
+@media (max-width: 640px) { .historico > li { grid-template-columns: 1fr; } }
+
+.vazio { color: var(--tinta-suave); border-left: 4px solid var(--ambar); padding: 0.4rem 0 0.4rem 1rem; }
+.aviso { background: var(--ambar-fundo); color: var(--ambar-texto); border-radius: var(--raio); padding: 0.9rem 1.1rem; }
+.aviso.erro { background: var(--erro-fundo); color: var(--erro); }
+.aviso.ok { background: var(--verde-fundo); color: #0b5a40; }
+
+/* ---------- Rodapé ---------- */
+.rodape { background: var(--tinta); color: #c9d4f2; padding-block: 2rem; font-size: 0.95rem; }
+.rodape .contido { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.rodape a { color: #c9d4f2; }
+.rodape a:hover { color: var(--branco); }
+.rodape .links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+@media (max-width: 520px) {
+  .topo .contido { flex-wrap: wrap; row-gap: 0.4rem; }
+  .topo nav { gap: 1.1rem; flex-wrap: wrap; }
+  .topo nav a { font-size: 0.93rem; }
+}

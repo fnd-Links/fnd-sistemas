@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FND Sistemas — downloads e suporte</title>
+  <meta name="description" content="Central oficial de downloads e suporte dos programas FND Sistemas para Windows.">
+  <meta property="og:title" content="FND Sistemas — downloads e suporte">
+  <meta property="og:description" content="Baixe os programas FND Sistemas para Windows e acompanhe as atualizações.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0e1b3d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="data/programas.json" as="fetch" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/inicio.js"></script>
+</head>
+<body>
+  <a class="pular" href="#programas">Ir para os programas</a>
+
+  <header class="topo">
+    <div class="contido">
+      <a class="marca" href="./" aria-label="FND Sistemas, página inicial">FND<span>Sistemas</span></a>
+      <nav aria-label="Seções">
+        <a href="#programas">Programas</a>
+        <a href="#como-baixar">Como baixar</a>
+        <a href="#suporte">Suporte</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="abertura" aria-labelledby="titulo">
+      <div class="contido">
+        <h1 id="titulo" aria-label="FND Sistemas">FND</h1>
+        <ul class="indice" id="indice" aria-label="Programas FND"></ul>
+        <p class="frase" id="frase">Programas para Windows feitos para o dia a dia de empresas, portarias e técnicos.</p>
+      </div>
+    </section>
+
+    <section class="secao" id="programas" aria-labelledby="t-programas">
+      <div class="contido">
+        <h2 id="t-programas">Programas</h2>
+        <ul class="programas" id="lista-programas">
+          <li class="vazio">Carregando a lista de programas…</li>
+        </ul>
+        <noscript><p class="aviso">Para ver os programas e os downloads, ative o JavaScript no navegador.</p></noscript>
+      </div>
+    </section>
+
+    <section class="secao clara" id="como-baixar" aria-labelledby="t-como">
+      <div class="contido">
+        <h2 id="t-como">Como baixar e instalar</h2>
+        <ol class="passos">
+          <li>
+            <h3>Escolha o programa</h3>
+            <p>Abra a página do programa e confira a versão e o que mudou nela.</p>
+          </li>
+          <li>
+            <h3>Baixe o arquivo ZIP</h3>
+            <p>O botão Baixar entrega o arquivo oficial, guardado no GitHub da FND Sistemas.</p>
+          </li>
+          <li>
+            <h3>Extraia e instale</h3>
+            <p>Clique com o botão direito no ZIP, escolha Extrair tudo e abra o instalador que está dentro da pasta.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="secao" id="suporte" aria-labelledby="t-suporte">
+      <div class="contido">
+        <h2 id="t-suporte">Suporte</h2>
+        <p>Dúvida na instalação, na licença ou no uso de algum programa? Fale com a FND Sistemas.</p>
+        <div class="contatos" id="contatos"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="contido">
+      <span>FND Sistemas. Baixe os programas somente por este portal.</span>
+      <span class="links"><a href="admin/">Área administrativa</a></span>
+    </div>
+  </footer>
+</body>
+</html>

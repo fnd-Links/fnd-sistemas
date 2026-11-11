@@ -1,0 +1,70 @@
+/* FND Sistemas — painel administrativo */
+
+.admin main { padding-block: 2rem 5rem; }
+.admin h1 { font-size: 1.9rem; margin-bottom: 0.5rem; }
+.admin h2 { font-size: 1.35rem; }
+.admin h3 { font-size: 1.05rem; }
+
+.entrar { max-width: 640px; }
+.entrar ol { padding-left: 1.2rem; }
+.entrar li + li { margin-top: 0.4rem; }
+.entrar > * + * { margin-top: 1rem; }
+
+.campo { display: block; }
+.campo + .campo, .campo + .linha-campos, .linha-campos + .campo, .linha-campos + .linha-campos { margin-top: 0.9rem; }
+.campo > span { display: block; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem; }
+.campo small { display: block; color: var(--tinta-suave); font-size: 0.86rem; margin-top: 0.2rem; }
+.campo input[type="text"], .campo input[type="password"], .campo input[type="url"], .campo input[type="email"],
+.campo input[type="date"], .campo input[type="number"], .campo textarea {
+  width: 100%; font: inherit; color: var(--tinta); background: var(--branco);
+  border: 1.5px solid #9fadc9; border-radius: var(--raio); padding: 0.55rem 0.7rem;
+}
+.campo textarea { min-height: 6.5rem; resize: vertical; line-height: 1.4; }
+.campo input:focus-visible, .campo textarea:focus-visible { outline: 3px solid var(--ambar); outline-offset: 1px; border-color: var(--tinta); }
+.campo input[readonly] { background: #e6ebf4; color: var(--tinta-suave); }
+.campo input[type="color"] { width: 4rem; height: 2.5rem; padding: 0.15rem; border: 1.5px solid #9fadc9; border-radius: var(--raio); background: var(--branco); }
+.marcar { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.9rem; }
+.marcar input { width: 1.15rem; height: 1.15rem; }
+.linha-campos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.9rem; }
+.linha-campos .campo + .campo { margin-top: 0; }
+
+.barra {
+  position: sticky; top: 0; z-index: 5; background: var(--papel); border-bottom: 2px solid var(--tinta);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; padding-block: 0.8rem; margin-bottom: 1.5rem;
+}
+.barra .situacao { font-weight: 600; }
+.barra .situacao.sujo { color: var(--ambar-texto); }
+.barra .acoes { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+.painel { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 2rem; align-items: start; }
+@media (max-width: 860px) { .painel { grid-template-columns: 1fr; } }
+
+.menu { list-style: none; margin: 0 0 1rem; padding: 0; border-top: 2px solid var(--tinta); }
+.menu button {
+  width: 100%; text-align: left; font: inherit; color: var(--tinta); background: none; border: 0;
+  border-bottom: 1px solid var(--linha); border-left: 6px solid var(--cor-programa, transparent);
+  padding: 0.7rem 0.6rem 0.7rem 0.8rem; cursor: pointer;
+}
+.menu button:hover { background: #e3eafc; }
+.menu button[aria-current="true"] { background: var(--tinta); color: var(--branco); font-weight: 700; }
+.menu small { display: block; font-weight: 400; opacity: 0.8; font-size: 0.82rem; }
+
+.bloco { background: var(--branco); border: 1px solid var(--linha); border-radius: var(--raio); padding: 1.25rem; }
+.bloco + .bloco { margin-top: 1.25rem; }
+.bloco > h2, .bloco > h3 { margin-bottom: 1rem; }
+.bloco .cabeca { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.6rem; margin-bottom: 1rem; }
+.bloco .cabeca h2, .bloco .cabeca h3 { margin: 0; }
+.bloco .acoes { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.versao-bloco { border: 1.5px solid var(--tinta); border-radius: var(--raio); padding: 1rem; }
+.versao-bloco + .versao-bloco { margin-top: 1rem; }
+.versao-bloco fieldset { border: 1px dashed #9fadc9; border-radius: var(--raio); margin: 1rem 0 0; padding: 0.9rem; }
+.versao-bloco legend { font-weight: 700; padding-inline: 0.4rem; }
+.versao-bloco .retorno { margin-top: 0.75rem; font-size: 0.95rem; }
+.versao-bloco .retorno:empty { display: none; }
+.tag { font-family: ui-monospace, Consolas, monospace; font-size: 0.86rem; background: #e6ebf4; padding: 0.1rem 0.4rem; border-radius: 4px; overflow-wrap: anywhere; }
+
+.avisos { position: fixed; right: 1rem; bottom: 1rem; display: flex; flex-direction: column; gap: 0.5rem; max-width: min(420px, calc(100% - 2rem)); z-index: 20; }
+.avisos .aviso { box-shadow: 0 6px 20px rgba(14, 27, 61, 0.25); border: 1px solid currentColor; }
+
+.erros { margin: 0; padding-left: 1.2rem; }

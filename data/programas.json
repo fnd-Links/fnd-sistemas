@@ -1,0 +1,105 @@
+{
+  "portal": {
+    "nome": "FND Sistemas",
+    "frase": "Programas para Windows feitos para o dia a dia de empresas, portarias e técnicos.",
+    "contato": {
+      "instagram": "https://www.instagram.com/fnd.sistemas",
+      "youtube": "https://www.youtube.com/@fnd-sistemas",
+      "whatsapp": "",
+      "email": ""
+    }
+  },
+  "programas": [
+    {
+      "id": "fnd-remoto-central",
+      "nome": "FND Remoto Central",
+      "resumo": "Central para acompanhar e manter computadores Windows da rede.",
+      "descricao": "O FND Remoto Central reúne em um painel os computadores Windows que você atende. A central fica instalada em um PC da rede local e mostra a situação de cada máquina, para a manutenção ser feita sem precisar ir até cada mesa.",
+      "recursos": [
+        "Painel com os computadores cadastrados",
+        "Funciona na rede local, sem depender de servidor na internet",
+        "Manutenção em segundo plano, sem atrapalhar quem usa o computador"
+      ],
+      "requisitos": ["Windows 10 ou 11"],
+      "cor": "#1F4FE0",
+      "visivel": true,
+      "versoes": []
+    },
+    {
+      "id": "fnd-controle-de-acesso",
+      "nome": "FND Controle de Acesso",
+      "resumo": "Portaria organizada: funcionários, visitantes, ponto e ocorrências.",
+      "descricao": "O FND Controle de Acesso registra quem entra e quem sai. A portaria anota visitantes, entradas, saídas e ocorrências; o administrador acompanha tudo de outro computador da rede, com os mesmos dados.",
+      "recursos": [
+        "Cadastro de funcionários e registro de ponto",
+        "Visitantes, visitas agendadas e lista de bloqueados",
+        "Ocorrências e passagem de turno",
+        "Três níveis de acesso: administrador, supervisor e portaria",
+        "Cópia de segurança dos dados"
+      ],
+      "requisitos": ["Windows 10 ou 11"],
+      "cor": "#12805C",
+      "visivel": true,
+      "versoes": []
+    },
+    {
+      "id": "fnd-controle-de-acesso-pro",
+      "nome": "FND Controle de Acesso PRO",
+      "resumo": "O Controle de Acesso com câmeras e controle de veículos.",
+      "descricao": "O FND Controle de Acesso PRO é uma edição separada do Controle de Acesso. Além dos recursos de portaria, trabalha com câmeras e com o cadastro de veículos. Tem instalador, versões e atualizações próprios.",
+      "recursos": [
+        "Tudo o que o FND Controle de Acesso oferece",
+        "Câmeras: vídeo ao vivo e foto no registro",
+        "Cadastro e controle de veículos"
+      ],
+      "requisitos": ["Windows 10 ou 11"],
+      "cor": "#7A3FD1",
+      "visivel": true,
+      "versoes": []
+    },
+    {
+      "id": "fnd-vigia",
+      "nome": "FND Vigia",
+      "resumo": "",
+      "descricao": "",
+      "recursos": [],
+      "requisitos": ["Windows 10 ou 11"],
+      "cor": "#C2410C",
+      "visivel": true,
+      "versoes": []
+    },
+    {
+      "id": "fnd-otimizador-pro",
+      "nome": "FND Otimizador PRO",
+      "resumo": "Limpeza e otimização do Windows em poucos cliques.",
+      "descricao": "O FND Otimizador PRO limpa arquivos desnecessários e ajusta o Windows para o computador voltar a responder bem. Foi criado a partir da rotina de atendimento técnico da FND.",
+      "recursos": [
+        "Limpeza de arquivos temporários",
+        "Ajustes de otimização do Windows"
+      ],
+      "requisitos": ["Windows 10 ou 11"],
+      "cor": "#0E7490",
+      "visivel": true,
+      "versoes": []
+    },
+    {
+      "id": "fnd-organiza",
+      "nome": "FND Organiza",
+      "resumo": "Suas planilhas viram um sistema: projetos, módulos, filtros e relatórios.",
+      "descricao": "O FND Organiza serve para qualquer setor que hoje se vira com planilhas: RH, financeiro, engenharia, TI. Você monta os módulos e as colunas do seu jeito, importa o que já tem no Excel e acompanha tudo em um painel.",
+      "recursos": [
+        "Projetos e módulos com colunas personalizadas",
+        "Importação de planilhas do Excel",
+        "Filtros com busca e ações em lote",
+        "Painel configurável",
+        "Anexos de imagens e PDF",
+        "Relatórios, ocorrências e tarefas",
+        "Cópia de segurança dos dados"
+      ],
+      "requisitos": ["Windows 10 ou 11"],
+      "cor": "#B4257A",
+      "visivel": true,
+      "versoes": []
+    }
+  ]
+}
