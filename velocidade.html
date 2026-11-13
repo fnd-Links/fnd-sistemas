@@ -212,7 +212,8 @@ function mostrarResultado(r) {
   $('#r-down').textContent = fmt(r.download); $('#r-up').textContent = fmt(r.upload);
   $('#r-ping').textContent = fmt(r.ping, 0); $('#r-jit').textContent = fmt(r.jitter);
   $('#r-ping').className = r.ping > 100 ? 'bad' : r.ping > 50 ? 'warn' : 'ok';
-  $('#r-info').textContent = [r.operadora, r.ip && 'IP ' + r.ip, r.servidor && 'servidor ' + r.servidor + (r.cidade ? ' (' + r.cidade + ')' : '')].filter(Boolean).join(' · ');
+  $('#r-info').textContent = [r.operadora, r.ip && 'IP ' + r.ip, r.servidor && 'servidor ' + r.servidor + (r.cidade ? ' (' + r.cidade + ')' : ''),
+    r.metodoPing === 'http' ? 'ping medido pelo HTTP (antivírus ou proxy no caminho pode aumentar o ping)' : ''].filter(Boolean).join(' · ');
   const dicas = [];
   if (r.ping > 100) dicas.push('Ping alto: chamadas de vídeo e sistemas na nuvem podem travar.');
   if (r.jitter > 30) dicas.push('A internet está oscilando bastante.');
